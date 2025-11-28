@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steph <steph@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:58:38 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/28 10:26:21 by steph            ###   ########.fr       */
+/*   Updated: 2025/11/28 11:55:30 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_printf(const char *s, ...)
 	va_list	args;
 
 	if (!s)
-		return(-1);
-   	va_start(args, s);
+		return (-1);
+	va_start(args, s);
 	i = 0;
 	count = 0;
 	while (s[i])
@@ -31,7 +31,7 @@ int	ft_printf(const char *s, ...)
 		else
 			result = ft_protected_write(s[i]);
 		if (result == -1)
-			return (va_end(args),-1);
+			return (va_end(args), -1);
 		count += result;
 		i++;
 	}

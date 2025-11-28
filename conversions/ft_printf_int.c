@@ -16,7 +16,7 @@ static int	ft_putnbr_int(long nb)
 {
 	int	len;
 	int	result;
-	
+
 	len = 0;
 	if (nb < 0)
 	{
@@ -27,7 +27,7 @@ static int	ft_putnbr_int(long nb)
 		len ++;
 	}
 	if (nb >= 10)
-	{	
+	{
 		result = ft_putnbr_int(nb / 10);
 		if (result == -1)
 			return (-1);
@@ -37,8 +37,9 @@ static int	ft_putnbr_int(long nb)
 	if (result == -1)
 		return (-1);
 	len++;
-	return (len);	
+	return (len);
 }
+
 int	ft_printf_int(int nb)
 {
 	int	len;
@@ -46,5 +47,5 @@ int	ft_printf_int(int nb)
 	len = ft_putnbr_int((long)nb);
 	if (len == -1)
 		return (-1);
-	return (len);		
+	return (len);
 }

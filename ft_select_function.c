@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_function.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steph <steph@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:11:25 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/28 10:32:26 by steph            ###   ########.fr       */
+/*   Updated: 2025/11/28 11:57:34 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_verif_format(char c)
 {
 	char	*format;
 	size_t	i;
-	
+
 	i = 0;
 	format = "cspdiuxX%";
 	while (format[i])
@@ -27,10 +27,12 @@ static int	ft_verif_format(char c)
 	}
 	return (-1);
 }
+
 int	ft_select_function(char c, va_list *args)
 {
 	int	len;
 
+	len = 0;
 	if (ft_verif_format(c) == -1)
 		return (-1);
 	if (c == '%')
@@ -40,9 +42,9 @@ int	ft_select_function(char c, va_list *args)
 	else if (c == 's')
 		len = ft_printf_str(va_arg(*args, char *));
 	else if (c == 'p')
-	 	len = ft_printf_ptr(va_arg(*args, void *));
+		len = ft_printf_ptr(va_arg(*args, void *));
 	else if (c == 'd' || c == 'i')
-	 	len = ft_printf_int(va_arg(*args, int));
+		len = ft_printf_int(va_arg(*args, int));
 	else if (c == 'u')
 		len = ft_printf_unsigned(va_arg(*args, unsigned int));
 	else if (c == 'x')

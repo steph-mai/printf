@@ -6,7 +6,7 @@
 /*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:13:14 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/27 16:25:05 by stmaire          ###   ########.fr       */
+/*   Updated: 2025/11/28 12:07:22 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_printf_str(char *s)
 {
 	int	i;
 	int	result;
-	
+
 	if (s == NULL)
 		s = "(null)";
 	i = 0;
