@@ -6,11 +6,11 @@
 /*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:11:25 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/28 11:57:34 by stmaire          ###   ########.fr       */
+/*   Updated: 2025/11/28 12:27:51 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	ft_verif_format(char c)
 {

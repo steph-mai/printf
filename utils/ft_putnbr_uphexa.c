@@ -6,11 +6,11 @@
 /*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:29:27 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/28 12:17:08 by stmaire          ###   ########.fr       */
+/*   Updated: 2025/11/28 12:28:03 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_uphexa(unsigned int nb)
 {

@@ -6,11 +6,11 @@
 /*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:13:14 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/28 12:07:22 by stmaire          ###   ########.fr       */
+/*   Updated: 2025/11/28 12:28:01 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf_str(char *s)
 {

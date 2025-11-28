@@ -6,11 +6,11 @@
 /*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:29:16 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/28 12:16:02 by stmaire          ###   ########.fr       */
+/*   Updated: 2025/11/28 12:28:02 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_hexa(unsigned long nb)
 {
