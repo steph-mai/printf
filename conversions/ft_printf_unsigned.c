@@ -28,7 +28,7 @@ static int	ft_putnbr_unsigned(unsigned int nb)
 	result = ft_protected_write(nb % 10 + '0');
 	if (result == -1)
 		return(-1);
-	len += result;
+	len ++;
 	return (len);	
 }
 int	ft_printf_unsigned(unsigned int nb)

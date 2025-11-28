@@ -1,22 +1,41 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: steph <steph@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/11/07 09:13:20 by stmaire           #+#    #+#              #
+#    Updated: 2025/11/28 10:41:52 by steph            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME =  libftprintf.a
 
 CC = cc
-CFLAGS = -Werror -Wextra -Wall -I libft
+CFLAGS = -Werror -Wextra -Wall -I .
 
-SRCS = ft_printf.c ft_protected_write.c \
-ft_printf_str.c ft_select_function.c \
-ft_printf_ptr.c ft_printf_int.c \
-ft_printf_unsigned.c ft_printf_lowhexa.c \
-ft_putnbr_hexa.c ft_printf_uphexa.c \
-ft_putnbr_uphexa.c ft_printf_modulo.c\
+SRCS_ROOT = ft_select_function.c \
+ft_printf.c
 
+SRCS_CONV = conversions/ft_printf_str.c \
+conversions/ft_printf_ptr.c \
+conversions/ft_printf_int.c \
+conversions/ft_printf_unsigned.c \
+conversions/ft_printf_lowhexa.c \
+conversions/ft_printf_uphexa.c \
+conversions/ft_printf_modulo.c
+
+SRCS_UTILS = utils/ft_putnbr_hexa.c \
+utils/ft_putnbr_uphexa.c \
+utils/ft_protected_write.c \
+utils/ft_protected_str.c
+
+SRCS = $(SRCS_ROOT) $(SRCS_CONV) $(SRCS_UTILS)
 
 HEADERS = printf.h
 
 OBJ = $(patsubst %.c,%.o,$(SRCS))
-
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
 
@@ -24,17 +43,13 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	make -C $(LIBFT_DIR)
-	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJ)
 
 clean: 
 	rm -f $(OBJ)
-	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

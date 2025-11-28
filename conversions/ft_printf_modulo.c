@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_printf_modulo.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stmaire <stmaire@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: steph <steph@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:12:17 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/19 17:35:49 by stmaire          ###   ########lyon.fr   */
+/*   Created: 2025/11/27 15:44:18 by stmaire           #+#    #+#             */
+/*   Updated: 2025/11/28 10:11:35 by steph            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_printf_modulo()
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	int		result;
+	
+	result = ft_protected_write('%');
+	if (result == -1)
+		return (-1);
+	return (1);
 }

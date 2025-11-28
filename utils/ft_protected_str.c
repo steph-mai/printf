@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_modulo.c                                 :+:      :+:    :+:   */
+/*   ft_protected_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
+/*   By: steph <steph@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 15:44:18 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/27 16:47:02 by stmaire          ###   ########.fr       */
+/*   Created: 2025/11/28 09:50:02 by stmaire           #+#    #+#             */
+/*   Updated: 2025/11/28 09:56:42 by steph            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_printf_modulo(char c)
+int ft_protected_str(char *s)
 {
-	int result;
+    int i;
+    int result;
 
-	c = '%';
-	result = write(1, &c, 1);
-	if (result == -1)
-		return (-1);
-	return (1);
+    i = 0;
+    result = 0;
+    while (s[i])
+    {
+        result = ft_protected_write(s[i]);
+        if (result == -1)
+            return (-1);
+        i++;
+    }
+    return (i);
 }

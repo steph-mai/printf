@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_function.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
+/*   By: steph <steph@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:11:25 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/27 16:33:40 by stmaire          ###   ########.fr       */
+/*   Updated: 2025/11/28 10:32:26 by steph            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,16 @@ int	ft_select_function(char c, va_list *args)
 {
 	int	len;
 
-	len = 0;
 	if (ft_verif_format(c) == -1)
 		return (-1);
 	if (c == '%')
-		len = ft_printf_modulo(va_arg(*args, int));
+		len = ft_printf_modulo();
 	else if (c == 'c')
 		len = ft_protected_write(va_arg(*args, int));
 	else if (c == 's')
 		len = ft_printf_str(va_arg(*args, char *));
 	else if (c == 'p')
-	 	len = ft_printf_ptr(va_arg (*args, void *));
+	 	len = ft_printf_ptr(va_arg(*args, void *));
 	else if (c == 'd' || c == 'i')
 	 	len = ft_printf_int(va_arg(*args, int));
 	else if (c == 'u')

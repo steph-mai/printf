@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_uphexa.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
+/*   By: steph <steph@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 17:07:58 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/27 16:24:34 by stmaire          ###   ########.fr       */
+/*   Created: 2025/11/26 16:29:27 by stmaire           #+#    #+#             */
+/*   Updated: 2025/11/28 10:08:01 by steph            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_printf_ptr(void *ptr)
+int ft_putnbr_uphexa(unsigned int nb)
 {
-	unsigned long	nb;
-	int				len;
-	int				result;
-
+	char	*base;	
+	int		len;
+	int		result;
+	
 	len = 0;
-	nb = (unsigned long)ptr;
-	result = ft_printf_str("0x");
-	if (result == -1)
-		return (-1);
-	len +=2;
-	if (!ptr)
+	base = "0123456789ABCDEF";
+	if (nb >= 16)
 	{
-		result = ft_protected_write('0');
-		if (result == -1)
-			return (-1);
-		return(3);
-	}
-	else
-	{
-		result = ft_putnbr_hexa(nb);
+		result = ft_putnbr_uphexa(nb / 16);
 		if (result == -1)
 			return (-1);
 		len += result;
-	return (len);
 	}
+	result = ft_protected_write(base[nb % 16]);
+	if (result == -1)
+		return (-1);
+	len++;
+	return (len);		
 }
