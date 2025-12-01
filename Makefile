@@ -6,14 +6,14 @@
 #    By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/28 11:58:31 by stmaire           #+#    #+#              #
-#    Updated: 2025/11/28 12:27:53 by stmaire          ###   ########.fr        #
+#    Updated: 2025/12/01 10:38:09 by stmaire          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =  libftprintf.a
 
 CC = cc
-CFLAGS = -Werror -Wextra -Wall -I .
+CFLAGS = -Werror -Wextra -Wall -I.
 
 SRCS_ROOT = ft_select_function.c \
 ft_printf.c
@@ -33,7 +33,7 @@ utils/ft_protected_str.c
 
 SRCS = $(SRCS_ROOT) $(SRCS_CONV) $(SRCS_UTILS)
 
-HEADERS = ft_ft_printf.h
+HEADERS = ft_printf.h
 
 OBJ = $(patsubst %.c,%.o,$(SRCS))
 
