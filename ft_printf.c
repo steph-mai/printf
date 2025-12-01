@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steph <steph@student.42.fr>                +#+  +:+       +#+        */
+/*   By: stmaire <stmaire@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:58:38 by stmaire           #+#    #+#             */
-/*   Updated: 2025/11/30 17:40:26 by steph            ###   ########.fr       */
+/*   Updated: 2025/12/01 08:57:30 by stmaire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,13 @@ static int	ft_handle_format(const char *s, va_list *args)
 		i++;
 	}
 	return (count);
-	
 }
+
 int	ft_printf(const char *s, ...)
 {
-	
 	va_list	args;
 	int		count;
-	
+
 	if (!s)
 		return (-1);
 	va_start(args, s);
